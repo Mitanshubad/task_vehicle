@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "lint": "eslint .",
+    "format": "prettier --write ."
   },
   "keywords": [],
   "author": "",
@@ -16,5 +18,9 @@
     "express": "^4.19.2",
     "mongoose": "^8.3.3",
     "nodemon": "^3.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.10.0",
+    "prettier": "^2.5.1"
   }
 }
