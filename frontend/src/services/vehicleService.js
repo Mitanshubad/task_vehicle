@@ -2,7 +2,7 @@
 
 import axios from 'axios';
 // https://task-vehicle.onrender.com
-const BASE_URL = 'http://localhost:3000/api/vehicles';
+const BASE_URL = 'https://task-vehicle.onrender.com/api/vehicles';
 
 const createVehicle = async (vehicleData) => {
     try {
