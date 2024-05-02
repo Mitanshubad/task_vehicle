@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import vehicleService from '../services/vehicleService';
 
-const EditForm = ({ vehicleId }) => {
+const EditForm = ({setShow , vehicleId }) => {
     const [formData, setFormData] = useState({
         name: '',
         speed: '',
@@ -41,6 +41,12 @@ const EditForm = ({ vehicleId }) => {
            const res =  await vehicleService.updateVehicleField(vehicleId, formData);
             // Optionally reset form data or do something else on successful submission
             console.log("res ",res)
+            // window.open('/popup-page', '_blank', 'width=600,height=400');
+        // Reload the page after a short delay
+        setTimeout(() => {
+            window.location.reload();
+        }, 1000);
+        setShow(false)
         } catch (error) {
             console.error('Error updating vehicle data:', error);
         }

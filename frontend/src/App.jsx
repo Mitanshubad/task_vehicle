@@ -12,6 +12,7 @@ import EditForm from './components/EditForm';
 function App() {
   const [component, setComponent] = useState('Home');
   const [vehicleId,setVehicleId] = useState("6632728af02f7666206bc120")
+  const [show,setShow] = useState(false)
   return (
     <div className="flex h-screen">
       {/* Sidebar */}
@@ -28,13 +29,11 @@ function App() {
 
         {/* Body */}
         <div className="flex-grow overflow-y-auto">
-          {component === 'Form' && <Form />}
-          {component === 'Home' && <Home />}
-          {component === 'Table' && <Table setVehicleId={setVehicleId} />}
-          <EditForm vehicleId={vehicleId} />
-          {
-            console.log(vehicleId)
-          }
+          {!show && component === 'Form' && <Form />}
+          {!show && component === 'Home' && <Home />}
+          {!show && component === 'Table' && <Table setShow={setShow} setVehicleId={setVehicleId} />}
+         { show && <EditForm vehicleId={vehicleId} setShow={setShow} />}
+         
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import vehicleService from '../services/vehicleService';
 
-const VehicleList = ({setVehicleId}) => {
+const VehicleList = ({setShow,setVehicleId}) => {
     const [vehicles, setVehicles] = useState([]);
 
     useEffect(() => {
@@ -35,6 +35,7 @@ const VehicleList = ({setVehicleId}) => {
 
     const handleEditVehicle = (id) => {
         setVehicleId(id);
+        setShow(prev=>!prev)
     };
 
     return (
