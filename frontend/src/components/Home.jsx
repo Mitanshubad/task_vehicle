@@ -35,7 +35,7 @@ const VehicleDetails = ({ match }) => {
     return (
         <div className="container mx-auto my-8 p-8 bg-gray-100 rounded-lg">
             <h2 className="text-2xl font-bold mb-4 text-center">Vehicle Details</h2>
-
+  <h3 className='text-xl font-bold text-gray-600'>Select Your Favourite Vehicle :</h3>
             {/* Vehicle Dropdown */}
             <div className="mb-4">
                 <select
