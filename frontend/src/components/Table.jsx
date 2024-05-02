@@ -164,7 +164,7 @@ const VehicleList = ({ setShow, setVehicleId }) => {
 
     return (
         <div className="container mx-auto">
-            <h2 className="text-xl font-bold mb-4 text-center">Vehicle List</h2>
+            <h2 className="text-xl font-bold mt-7 text-center">Vehicle List</h2>
             <div className="overflow-x-auto">
                 <table className="table-auto bg-white shadow-md rounded-lg text-sm">
                     <thead>
