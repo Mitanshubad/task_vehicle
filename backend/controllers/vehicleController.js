@@ -48,23 +48,56 @@ exports.getVehicleById = async (req, res, next) => {
     }
 };
 
-// Update vehicle by ID
+
+
 exports.updateVehicle = async (req, res, next) => {
     try {
-        const vehicle = await Vehicle.findByIdAndUpdate(req.params.id, req.body, {
-            new: true,
-            runValidators: true
+        const { name, speed, averageSpeed, temperature, fuelLevel, engineStatus, onOff } = req.body;
+
+        // Check if any required field is missing in the request body
+        if (!name || !speed || !averageSpeed || !temperature || !fuelLevel || !engineStatus) {
+            return res.status(400).json({
+                status: 'error',
+                message: 'All fields are required for vehicle update.'
+            });
+        }
+
+        // Find the vehicle by ID and update it with the new data
+        const updatedVehicle = await Vehicle.findByIdAndUpdate(req.params.id, {
+            name,
+            speed,
+            averageSpeed,
+            temperature,
+            fuelLevel,
+            engineStatus,
+            onOff
+        }, {
+            new: true, // Return the modified document rather than the original
+            runValidators: true // Run model validation before updating
         });
-        res.status(200).json({
+
+        // Check if the vehicle was not found
+        if (!updatedVehicle) {
+            return res.status(404).json({
+                status: 'error',
+                message: 'Vehicle not found.'
+            });
+        }
+
+        // Send success response with updated vehicle data
+        return res.status(200).json({
             status: 'success',
             data: {
-                vehicle
+                vehicle: updatedVehicle
             }
         });
     } catch (err) {
+        // Handle errors
+        console.error("Error updating vehicle:",err , err.message);
         next(err);
     }
 };
+
 
 // Delete vehicle by ID
 exports.deleteVehicle = async (req, res, next) => {

@@ -1,8 +1,8 @@
 // services/vehicleService.js
 
 import axios from 'axios';
-
-const BASE_URL = 'https://task-vehicle.onrender.com/api/vehicles';
+// https://task-vehicle.onrender.com
+const BASE_URL = 'http://localhost:3000/api/vehicles';
 
 const createVehicle = async (vehicleData) => {
     try {
@@ -31,11 +31,13 @@ const getVehicleById = async (id) => {
     }
 };
 
-const updateVehicleField = async (id, fieldName, fieldValue) => {
+const updateVehicleField = async (id,formData) => {
     try {
-        const response = await axios.put(`${BASE_URL}/${id}`, { [fieldName]: fieldValue });
+        console.log("update field id ",id , formData);
+        const response = await axios.put(`${BASE_URL}/${id}`,  formData );
         return response.data;
     } catch (error) {
+        console.log(error.message)
         throw error;
     }
 };

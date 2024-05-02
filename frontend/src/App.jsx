@@ -7,10 +7,11 @@ import Body from './components/Body';
 import Form from './components/Form';
 import Home from './components/Home';
 import Table from './components/Table';
+import EditForm from './components/EditForm';
 
 function App() {
   const [component, setComponent] = useState('Home');
-
+  const [vehicleId,setVehicleId] = useState("6632728af02f7666206bc120")
   return (
     <div className="flex h-screen">
       {/* Sidebar */}
@@ -29,7 +30,11 @@ function App() {
         <div className="flex-grow overflow-y-auto">
           {component === 'Form' && <Form />}
           {component === 'Home' && <Home />}
-          {component === 'Table' && <Table />}
+          {component === 'Table' && <Table setVehicleId={setVehicleId} />}
+          <EditForm vehicleId={vehicleId} />
+          {
+            console.log(vehicleId)
+          }
         </div>
       </div>
     </div>

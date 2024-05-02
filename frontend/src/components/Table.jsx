@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import vehicleService from '../services/vehicleService';
 
-const VehicleList = () => {
+const VehicleList = ({setVehicleId}) => {
     const [vehicles, setVehicles] = useState([]);
 
     useEffect(() => {
@@ -31,6 +31,10 @@ const VehicleList = () => {
         } catch (error) {
             console.error(`Error updating ${field} for vehicle with ID ${id}:`, error);
         }
+    };
+
+    const handleEditVehicle = (id) => {
+        setVehicleId(id);
     };
 
     return (
@@ -102,6 +106,9 @@ const VehicleList = () => {
                                         <option value="On">On</option>
                                         <option value="Off">Off</option>
                                     </select>
+                                </td>
+                                <td className="border px-4 py-2">
+                                   <button onClick={() => handleEditVehicle(vehicle._id)} >Edit vehicle</button>
                                 </td>
                             </tr>
                         ))}
