@@ -30,7 +30,7 @@ import React from 'react';
 
 const Navbar = () => {
   return (
-    <nav className="bg-gray-800 text-white py-4 px-6 flex justify-between items-center md:py-2">
+    <nav className="bg-gray-800 text-white py-4 px-6 flex justify-between items-center">
       {/* Logo */}
       <div className="flex items-center">
         {/* <img src="https://etimg.etb2bimg.com/thumb/msid-59236460,width-1200,height-900,resizemode-4/.jpg" alt="Logo" className="w-10 h-10 mr-2" />
