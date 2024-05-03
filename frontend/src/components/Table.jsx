@@ -163,7 +163,7 @@ const VehicleList = ({ setShow, setVehicleId }) => {
     };
 
     return (
-        <div className="container mx-auto">
+        <div className="container mt-7 mx-auto">
             <h2 className="text-xl font-bold  text-center">Vehicle List</h2>
             <div className="overflow-x-auto">
                 <table className="table-auto bg-white shadow-md rounded-lg text-sm">
