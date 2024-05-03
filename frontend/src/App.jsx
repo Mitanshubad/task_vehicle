@@ -75,9 +75,9 @@ function App() {
         {/* Body */}
         <div className="overflow-y-auto">
           {!show && component === 'Form' && <Form />}
-          {!show && component === 'Home' && <Home />}
+          {!show && component === 'Home' && <Home vehicleId={vehicleId} />}
           {!show && component === 'Table' && <Table setShow={setShow} setVehicleId={setVehicleId} />}
-          {show && <EditForm vehicleId={vehicleId} setShow={setShow} />}
+          {show && <EditForm setComponent={setComponent} vehicleId={vehicleId} setShow={setShow} setVehicleId={setVehicleId} />}
         </div>
       </div>
     </div>
