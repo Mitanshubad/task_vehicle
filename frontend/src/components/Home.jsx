@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FaCamera } from 'react-icons/fa';
 import vehicleService from '../services/vehicleService';
 
-const VehicleDetails = ({ match }) => {
+const VehicleDetails = ({ match ,vehicleId }) => {
     const [vehicles, setVehicles] = useState([]);
     const [selectedVehicle, setSelectedVehicle] = useState(null);
     const [selectedVehicleId, setSelectedVehicleId] = useState('');
@@ -12,8 +12,11 @@ const VehicleDetails = ({ match }) => {
             try {
                 const response = await vehicleService.getAllVehicles();
                 setVehicles(response.data.vehicles);
+                setSelectedVehicleId(vehicleId);
                 if (response.data.vehicles.length > 0) {
-                    setSelectedVehicleId(response.data.vehicles[0]._id);
+
+                    setSelectedVehicleId(vehicleId);
+                    // response.data.vehicles[0]._id
                 }
             } catch (error) {
                 console.error('Error fetching vehicles:', error);
@@ -24,6 +27,7 @@ const VehicleDetails = ({ match }) => {
     }, []);
 
     useEffect(() => {
+         setSelectedVehicle(vehicleId);
         const selected = vehicles.find(vehicle => vehicle._id === selectedVehicleId);
         setSelectedVehicle(selected);
     }, [selectedVehicleId, vehicles]);
