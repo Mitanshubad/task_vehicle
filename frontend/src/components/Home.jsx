@@ -33,7 +33,7 @@ const VehicleDetails = ({ match }) => {
     };
 
     return (
-        <div className="container  p-8 bg-gray-100">
+        <div className="container  mx-auto  p-8 bg-gray-100">
             <div className="grid grid-cols-3 gap-4">
                 {/* Vehicle Details */}
                 <div className="col-span-3 mb-4">
