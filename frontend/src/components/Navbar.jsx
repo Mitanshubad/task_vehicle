@@ -40,8 +40,8 @@ const Navbar = () => {
       {/* Navigation Links */}
       <ul className="flex space-x-6">
 
-        <li><a href="#" className="hover:text-gray-300">About Us</a></li>
-        <li><a href="#" className="hover:text-gray-300">Contact Us</a></li>
+        <li><a href="#" className="hover:text-gray-300">About</a></li>
+        <li><a href="#" className="hover:text-gray-300">Contact</a></li>
       </ul>
 
       {/* Duplicate Login/Signup Buttons */}
