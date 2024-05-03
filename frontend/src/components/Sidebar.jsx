@@ -111,7 +111,7 @@ const Sidebar = ({ setComponent }) => {
   return (
     <div className="relative h-full md:flex md:flex-col">
       {/* Hamburger Button for Mobile */}
-{/*       <div className="absolute top-0 left-0 z-50 md:hidden">
+      <div className="absolute top-0 left-0 z-50 md:hidden">
       <button onClick={() => setShowMenu(!showMenu)} className="text-white p-4 bg-blue-500 focus:outline-none">
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             {showMenu ? (
@@ -121,7 +121,7 @@ const Sidebar = ({ setComponent }) => {
             )}
           </svg>
         </button>
-      </div> */}
+      </div>
 
       {/* Sidebar Overlay Menu */}
       {showMenu && (
