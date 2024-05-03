@@ -113,7 +113,7 @@ const Sidebar = ({ setComponent }) => {
       {/* Hamburger Button for Mobile */}
       <div className="absolute top-0 left-0 z-50 md:hidden">
       <button onClick={() => setShowMenu(!showMenu)} className="text-white p-4 bg-blue-500 focus:outline-none">
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <svg className="w-6 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             {showMenu ? (
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             ) : (
