@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import vehicleService from '../services/vehicleService';
 
-const EditForm = ({setShow , vehicleId }) => {
+const EditForm = ({setShow , vehicleId , setVehicleId,setComponent  }) => {
     const [formData, setFormData] = useState({
         name: '',
         speed: '',
@@ -43,9 +43,11 @@ const EditForm = ({setShow , vehicleId }) => {
             console.log("res ",res)
             // window.open('/popup-page', '_blank', 'width=600,height=400');
         // Reload the page after a short delay
-        setTimeout(() => {
-            window.location.reload();
-        }, 1000);
+        // setTimeout(() => {
+        //     window.location.reload();
+        // }, 1000);
+        setComponent('Home')
+        setVehicleId(vehicleId)
         setShow(false)
         } catch (error) {
             console.error('Error updating vehicle data:', error);
